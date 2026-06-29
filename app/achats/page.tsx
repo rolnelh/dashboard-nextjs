@@ -1,96 +1,55 @@
 "use client";
 
-import React, { useState } from 'react';
-import {
-    ShoppingBag,
-    Search,
-    ChevronRight,
-    Package,
-    Clock,
-    CheckCircle2,
-    XCircle,
-    ExternalLink
-} from 'lucide-react';
+import React from 'react';
+import { ShoppingBag, ChevronRight, CheckCircle2, Clock, MoreHorizontal } from 'lucide-react';
 
 const achats = [
-    { id: "#ORD-7829", date: "10 Mars 2026", article: "Abonnement Premium API", montant: "15 000 FCFA", statut: "Livré", logo: "AP" },
-    { id: "#ORD-7825", date: "08 Mars 2026", article: "Pack Crédits SMS", montant: "5 000 FCFA", statut: "En cours", logo: "CS" },
+    { id: "#ORD-7829", date: "10 Mars 2026", article: "Abonnement Premium API", montant: "15 000 FCFA", statut: "Livré" },
+    { id: "#ORD-7825", date: "08 Mars 2026", article: "Pack Crédits SMS", montant: "5 000 FCFA", statut: "En cours" },
+    { id: "#ORD-7820", date: "05 Mars 2026", article: "Maintenance Serveur", montant: "25 000 FCFA", statut: "Livré" },
+    { id: "#ORD-7815", date: "02 Mars 2026", article: "Nom de domaine .bj", montant: "12 000 FCFA", statut: "Livré" },
+    { id: "#ORD-7801", date: "28 Fév 2026", article: "Consultation UI/UX", montant: "50 000 FCFA", statut: "En cours" },
 ];
 
-export default function AchatsPage() {
-    const [activeFilter, setActiveFilter] = useState('Tous');
-
+export default function MinimalistAchats() {
     return (
-        <div className="space-y-6 font-poppins">
-            {/* Header */}
-            <div className="flex justify-between items-center">
-                <div>
-                    <h1 className="text-2xl font-bold text-slate-900">Mes achats</h1>
-                    <p className="text-sm text-slate-500">Historique complet de vos commandes et factures.</p>
-                </div>
-                <div className="bg-white p-2 rounded-full border border-slate-100 shadow-sm flex items-center gap-2">
-                    <ShoppingBag size={20} className="text-[#e31937]" />
-                    <span className="text-sm font-medium text-slate-900">12 Commandes</span>
-                </div>
-            </div>
+        <div className="max-w-4xl mx-auto py-10 px-6 font-poppins bg-white dark:bg-slate-950 transition-colors duration-300">
+            <header className="mb-12">
+                <h1 className="text-3xl font-normal text-slate-900 dark:text-white tracking-tight">Vos achats</h1>
+                <p className="text-slate-500 dark:text-slate-400 mt-2">Suivi et historique de vos transactions récentes.</p>
+            </header>
 
-            {/* Barre d'outils (Filtres + Recherche) */}
-            <div className="bg-white rounded-3xl border border-slate-100 shadow-sm p-4 flex flex-col md:flex-row gap-4 items-center justify-between">
-                <div className="flex bg-slate-50 p-1 rounded-xl">
-                    {['Tous', 'En cours', 'Livré', 'Annulé'].map((filter) => (
-                        <button
-                            key={filter}
-                            onClick={() => setActiveFilter(filter)}
-                            className={`px-4 py-2 text-xs font-bold rounded-lg transition-all ${activeFilter === filter
-                                    ? 'bg-white text-slate-900 shadow-sm'
-                                    : 'text-slate-400 hover:text-slate-600'
-                                }`}
-                        >
-                            {filter}
-                        </button>
-                    ))}
-                </div>
-                <div className="relative w-full md:w-64">
-                    <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" size={16} />
-                    <input
-                        type="text"
-                        placeholder="N° de commande..."
-                        className="w-full bg-slate-50 border-none rounded-xl py-2 pl-10 pr-4 text-sm outline-none focus:ring-2 focus:ring-red-100"
-                    />
-                </div>
-            </div>
-
-            {/* Liste des achats */}
-            <div className="grid gap-4">
+            <div className="space-y-1">
                 {achats.map((achat) => (
-                    <div key={achat.id} className="group bg-white border border-slate-100 rounded-3xl p-5 hover:border-red-100 hover:shadow-md transition-all cursor-pointer">
-                        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-                            <div className="flex items-center gap-4">
-                                <div className="w-12 h-12 rounded-2xl bg-slate-50 flex items-center justify-center text-slate-400 font-bold group-hover:bg-red-50 group-hover:text-[#e31937] transition-colors">
-                                    {achat.logo}
-                                </div>
-                                <div>
-                                    <h3 className="font-bold text-slate-900">{achat.article}</h3>
-                                    <div className="flex items-center gap-2 text-xs text-slate-400 mt-1">
-                                        <span>{achat.id}</span>
-                                        <span>•</span>
-                                        <span>{achat.date}</span>
-                                    </div>
+                    <div
+                        key={achat.id}
+                        className="group flex items-center justify-between py-5 border-b border-slate-100 dark:border-slate-800 hover:bg-slate-50/50 dark:hover:bg-slate-900/50 px-4 rounded-2xl transition-all"
+                    >
+                        <div className="flex items-center gap-6">
+                            <div>
+                                <h3 className="font-semibold text-slate-900 dark:text-slate-100">{achat.article}</h3>
+                                <p className="text-xs text-slate-400 dark:text-slate-500 mt-0.5">{achat.date} • {achat.id}</p>
+                            </div>
+                        </div>
+
+                        <div className="flex items-center gap-6">
+                            <div className="text-right">
+                                <p className="text-sm font-semibold text-slate-900 dark:text-white">{achat.montant}</p>
+                                <div className={`flex items-center justify-end gap-1.5 text-[11px] font-medium mt-0.5 ${achat.statut === 'Livré' ? 'text-emerald-600 dark:text-emerald-400' : 'text-amber-600 dark:text-amber-400'
+                                    }`}>
+                                    {achat.statut === 'Livré' ? <CheckCircle2 size={12} /> : <Clock size={12} />}
+                                    {achat.statut}
                                 </div>
                             </div>
 
-                            <div className="flex items-center justify-between md:justify-end gap-8">
-                                <div className="text-right">
-                                    <p className="text-sm font-bold text-slate-900">{achat.montant}</p>
-                                    <span className={`inline-flex items-center gap-1 text-[10px] font-bold mt-1 ${achat.statut === 'Livré' ? 'text-green-500' : 'text-orange-500'
-                                        }`}>
-                                        {achat.statut === 'Livré' ? <CheckCircle2 size={12} /> : <Clock size={12} />}
-                                        {achat.statut}
-                                    </span>
-                                </div>
-                                <button className="p-2 bg-slate-50 rounded-xl text-slate-400 group-hover:bg-[#e31937] group-hover:text-white transition-all">
-                                    <ChevronRight size={18} />
+                            {/* Menu "Voir les détails" */}
+                            <div className="relative group/action">
+                                <button className="p-2 text-slate-300 dark:text-slate-600 hover:text-slate-900 dark:hover:text-white transition-colors">
+                                    <MoreHorizontal size={20} />
                                 </button>
+                                <div className="absolute right-0 top-full mt-2 w-32 bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-[10px] font-bold px-3 py-2 rounded-lg opacity-0 group-hover/action:opacity-100 transition-opacity pointer-events-none">
+                                    Voir les détails
+                                </div>
                             </div>
                         </div>
                     </div>

@@ -13,13 +13,13 @@ export default function Header() {
         <header className="h-16 border-b border-border bg-card flex items-center justify-between px-4 md:px-8 relative z-50 transition-colors duration-300">
 
             <div className="flex-1 max-w-md mr-4">
-                <div className="relative group">
+                <div className="relative group border border-gray-200 dark:border-gray-700 rounded-full hidden md:flex">
                     <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-brand transition-colors" size={18} />
 
                     <input
                         type="text"
                         placeholder="Rechercher..."
-                        className="hidden md:block w-full bg-background border-none rounded-full py-2 pl-10 pr-4 text-sm focus:ring-2 focus:ring-brand/10 transition-all outline-none text-foreground"
+                        className="hidden md:block w-full bg-background border-none rounded-full py-2 pl-10 pr-4 text-sm focus:ring-2 focus:ring-indigo-100 transition-all outline-none text-foreground"
                     />
 
                     <div className="md:hidden w-10 h-10 flex items-center justify-center rounded-full bg-background border border-border">

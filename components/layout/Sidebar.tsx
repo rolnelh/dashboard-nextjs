@@ -13,21 +13,24 @@ import {
     ChevronRight,
     UserCircle,
     ShoppingBag,
-    LayoutGrid,
+    // LayoutGrid,
     Menu,
-    X
+    X,
+    Users
 } from 'lucide-react';
 
 const menuItems = [
-    { name: 'Tableau de bord', icon: LayoutDashboard, href: '/dashboard' },
-    { name: 'Mes transactions', icon: CreditCard, href: '/transactions' },
+    // { name: 'Tableau de bord', icon: LayoutDashboard, href: '/dashboard' },
+    { name: 'Mes sous-comptes', icon: LayoutDashboard, href: '/sous-comptes' },
+    // { name: 'Mes transactions', icon: CreditCard, href: '/transactions' },
+    { name: 'Clients', icon: Users, href: '/clients' },
     { name: 'Mon profil', icon: UserCircle, href: '/profil' },
     { name: 'Mes achats', icon: ShoppingBag, href: '/achats' },
-    { name: 'Mon Espace', icon: LayoutGrid, href: '/mon-espace' },
+    // { name: 'Mon Espace', icon: LayoutGrid, href: '/mon-espace' },
 ];
 
 const supportItems = [
-    { name: 'Chat', icon: MessageSquare, href: '/chat', badge: 'Nouveau' },
+    // { name: 'Chat', icon: MessageSquare, href: '/chat', badge: 'Nouveau' },
     { name: 'E-mail', icon: Mail, href: '/email' },
     { name: 'Aide', icon: HelpCircle, href: '/help' },
 ];
@@ -42,7 +45,7 @@ export default function Sidebar() {
         <>
             <button
                 onClick={toggleSidebar}
-                className="lg:hidden fixed top-4 left-4 z-60 p-2 bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-lg shadow-sm text-slate-600 dark:text-slate-400"
+                className="lg:hidden fixed top-4 left-4 z-60 p-2 bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-lg text-slate-600 dark:text-slate-400"
             >
                 {isOpen ? <X size={20} /> : <Menu size={20} />}
             </button>
@@ -64,15 +67,12 @@ export default function Sidebar() {
             `}>
 
 
-                <div className="p-6">
-                    <div className="flex items-center gap-2">
-                        <div className="w-8 h-8 bg-[#e31937] rounded-lg flex items-center justify-center text-white font-bold shadow-lg shadow-red-200 dark:shadow-none">
-                            M
-                        </div>
-                        <span className="text-xl font-bold tracking-tight text-slate-900 dark:text-white">
-                            Dashboard
-                        </span>
-                    </div>
+                <div className="p-2 flex items-center">
+                    <img
+                        src="https://avatars.githubusercontent.com/u/39388339?s=280&v=4"
+                        alt="Logo"
+                        className="w-[70%] h-16 object-cover"
+                    />
                 </div>
 
 
@@ -129,7 +129,7 @@ export default function Sidebar() {
                 </nav>
 
                 <div className="p-4 border-t border-slate-50 dark:border-slate-900">
-                    <div className="flex items-center gap-3 p-2 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-900 cursor-pointer transition-colors group">
+                    <Link href="/parametres" className="flex items-center gap-3 p-2 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-900 cursor-pointer transition-colors group">
                         <div className="w-9 h-9 rounded-full bg-slate-900 dark:bg-white flex items-center justify-center text-white dark:text-slate-900 text-xs font-bold border-2 border-white dark:border-slate-800 shadow-sm">
                             DH
                         </div>
@@ -137,8 +137,9 @@ export default function Sidebar() {
                             <p className="text-sm font-semibold text-slate-900 dark:text-white truncate">Dieudonné H.</p>
                             <p className="text-xs text-slate-500 dark:text-slate-400 truncate">Commerçant</p>
                         </div>
+                        {/* L'icône fait partie du lien cliquable */}
                         <Settings size={16} className="text-slate-400 group-hover:rotate-45 transition-transform" />
-                    </div>
+                    </Link>
                 </div>
             </aside>
         </>
