@@ -20,9 +20,9 @@ import {
 } from 'lucide-react';
 
 const menuItems = [
-    // { name: 'Tableau de bord', icon: LayoutDashboard, href: '/dashboard' },
+    { name: 'Tableau de bord', icon: LayoutDashboard, href: '/dashboard' },
     { name: 'Mes sous-comptes', icon: LayoutDashboard, href: '/sous-comptes' },
-    // { name: 'Mes transactions', icon: CreditCard, href: '/transactions' },
+    { name: 'Mes transactions', icon: CreditCard, href: '/transactions' },
     { name: 'Clients', icon: Users, href: '/clients' },
     { name: 'Mon profil', icon: UserCircle, href: '/profil' },
     { name: 'Mes achats', icon: ShoppingBag, href: '/achats' },
@@ -30,7 +30,7 @@ const menuItems = [
 ];
 
 const supportItems = [
-    // { name: 'Chat', icon: MessageSquare, href: '/chat', badge: 'Nouveau' },
+    { name: 'Chat', icon: MessageSquare, href: '/chat', badge: 'Nouveau' },
     { name: 'E-mail', icon: Mail, href: '/email' },
     { name: 'Aide', icon: HelpCircle, href: '/help' },
 ];

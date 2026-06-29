@@ -17,31 +17,31 @@ export default function SousComptesPage() {
 
             {/* Onglets de filtrage */}
             <Tabs defaultValue="integration" className="w-full flex flex-col">
-                <TabsList className="bg-slate-950 border-b border-slate-800 w-full rounded-none p-0 h-12">
+                <TabsList className="bg-slate-50 border-b border-slate-800 w-full rounded-none p-0 h-12">
                     <TabsTrigger
                         value="integration"
-                        className="data-[state=active]:border-b-2 data-[state=active]:border-[#e31937] data-[state=active]:text-white text-slate-400 rounded-none flex-1 transition-all hover:text-slate-200"
+                        className="data-[state=active]:border-b-2 data-[state=active]:border-[#e31937] data-[state=active]:text-gray-900 text-slate-800 rounded-none flex-1 transition-all hover:text-slate-200 rounded-sm"
                     >
                         Intégration
                     </TabsTrigger>
 
                     <TabsTrigger
                         value="terminal"
-                        className="data-[state=active]:border-b-2 data-[state=active]:border-[#e31937] data-[state=active]:text-white text-slate-400 rounded-none flex-1 transition-all hover:text-slate-200"
+                        className="data-[state=active]:border-b-2 data-[state=active]:border-[#e31937] data-[state=active]:text-gray-900 text-slate-800 rounded-none flex-1 transition-all hover:text-slate-200 rounded-sm"
                     >
                         Terminal de paiement
                     </TabsTrigger>
 
                     <TabsTrigger
                         value="application"
-                        className="data-[state=active]:border-b-2 data-[state=active]:border-[#e31937] data-[state=active]:text-white text-slate-400 rounded-none flex-1 transition-all hover:text-slate-200"
+                        className="data-[state=active]:border-b-2 data-[state=active]:border-[#e31937] data-[state=active]:text-gray-900 text-slate-800 rounded-none flex-1 transition-all hover:text-slate-200 rounded-sm"
                     >
                         Application mobile
                     </TabsTrigger>
 
                     <TabsTrigger
                         value="chapchap"
-                        className="data-[state=active]:border-b-2 data-[state=active]:border-[#e31937] data-[state=active]:text-white text-slate-400 rounded-none flex-1 transition-all hover:text-slate-200"
+                        className="data-[state=active]:border-b-2 data-[state=active]:border-[#e31937] data-[state=active]:text-gray-900 text-slate-800 rounded-none flex-1 transition-all hover:text-slate-200 rounded-sm"
                     >
                         Chapchap
                     </TabsTrigger>
